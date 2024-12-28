@@ -1,0 +1,62 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+#botoes{
+    margin-top: 10px;
+}
+
+#area1, #area0, #area2{
+   height: 200px;
+   font-size: 150px;
+   text-align: center;
+   font-family: 'Roboto Mono', monospace;
+   line-height: 150px;
+}
+
+#numbers0, #area0 {
+    background-color: pink;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#numbers1, #area1 {
+    background-color: lightskyblue;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#numbers2, #area2 {
+    background-color: yellow;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#numbers0, #numbers1, #numbers2{
+   width: 450;
+}
+
+body {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 100px minmax(calc(100vh - 130px), auto) 30px;
+   min-height: 100vh;
+}
+
+main {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-evenly;
+   align-items: flex-start;
+   padding: 0 10px;
+}
+
+textarea {
+   resize: none;
+}
+
+footer {
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+   background-color: beige;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=yes" />
+    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png" type="image/png" sizes="16x16" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/ec29234e56.js" crossorigin="anonymous" defer></script>
+     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+  crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="bingo.css" />
+    <script src="bingo.js" defer></script>
+    <title>Bingo!</title>    
+  </head>
+  <body>
+      <header class="col-6 offset-3">
+        <div id="botoes">
+          <div class="d-grid gap-2 mb-1">
+            <button type="button" class="btn btn-block btn-primary" id="sorteio">Sortear!</button>
+          </div>
+        </div>
+        <div >
+          <div id="btn-group" class="mb-1 col-8 offset-2">
+            <button type="button" id="ant" class="btn btn-warning" data-toggle="modal" data-target="#rodada_anterior" disabled>Rodada Anterior</button>
+            <button type="button" class="btn btn-success" id="prox">Próxima rodada</button>
+            <button type="button" class="btn btn-danger" id="limpa" data-bs-toggle="modal" data-bs-target="#limpa_tudo">Limpa Tudo</button>
+          </div>
+        </div>
+      </header>
+      <main>
+         <div class="col-4">
+               <div class="form-group">
+                  <div id="area0"><h3>N° Sorteado</h3><p></p></div>
+                  <label for="numbers0" id="label0">Nº Sorteados</label>
+                  <textarea name="numbers0" id="numbers0" class="form-control" cols="30" rows="7" readonly></textarea>
+               </div>
+         </div>
+         <div class="col-4">
+               <div class="form-group">
+                  <div id="area1" hidden><h3>N° Sorteado</h3><p></p></div>
+                  <label for="numbers1" id="label1" hidden>Nº Sorteados</label>
+                  <textarea name="numbers1" id="numbers1" class="form-control" cols="30" rows="7" hidden></textarea>
+               </div>
+         </div>
+         <div class="col-4">
+               <div class="form-group" id="rodada3">
+                  <div id="area2" hidden><h3>N° Sorteado</h3><p></p></div>
+                  <label for="numbers2" id="label2" hidden>Nº Sorteados</label>
+                  <textarea name="numbers2" id="numbers2" class="form-control" cols="30" rows="7" hidden></textarea>
+               </div>
+         </div>
+      
+      <!-- Modal Rodada Anterior-->
+         <div class="modal fade" id="rodada_anterior" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Cuidado!</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+               </div>
+               <div class="modal-body">Todos os números dessa rodada serão apagados.Deseja continuar?</div>
+               <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-dismiss="modal" id="nao">Não</button>
+               <button type="button" class="btn btn-danger" data-dismiss="modal" id="sim">Sim</button>
+               </div>
+            </div>
+         </div>
+         </div>
+      <!-- Modal Limpa Tudo-->
+         <div class="modal fade" id="limpa_tudo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Cuidado!</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">Todos os números serão apagados. Deseja continuar?</div>
+               <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="nao_limpa">Não</button>
+               <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="sim_limpa">Sim</button>
+               </div>
+            </div>
+         </div>
+         </div>
+      </main>
+      <footer>
+         <small>Made by <a href="https://www.linkedin.com/in/leonardomarcattidasilvalms/" target="_blank">Leonardo Marcatti </a>with <a href="https://getbootstrap.com/" target="_blank">Bootstrap 5</a> and <a href="https://jquery.com/" target="_blank">jQuery</a></small>
+      </footer>
+  </body>
+</html>
